@@ -1,6 +1,6 @@
 'use strict';
 
-window.renderStatistics = function(ctx, names, times){
+window.renderStatistics = function(ctx, names, times) {
 
   // тень статистики
   ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
@@ -20,7 +20,7 @@ window.renderStatistics = function(ctx, names, times){
   // вычисляем максимальное значение в массиве times
   var max = -1;
 
-  for(var i = 0 ; i < times.length; i++ ) {
+  for (var i = 0; i < times.length; i++) {
     var time = times[i];
     if (time > max) {
       max = time;
@@ -42,10 +42,10 @@ window.renderStatistics = function(ctx, names, times){
 
     // Вывод значений из массивов (names, times) в облако статистики
     if (name === 'Вы') {
-    ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-  } else {
-    ctx.fillStyle = ['rgba(0, 0, ', ((Math.random() * 5) * 50).toFixed(0) ,' , ', (Math.random().toFixed(1)) ,')'].join('');
-  }
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = ['rgba(0, 0, ', ((Math.random() * 5) * 50).toFixed(0), ' , ', (Math.random().toFixed(1)), ')'].join('');
+    }
     ctx.fillRect(histoX + columnIndent * i, 245 - heightColumn, 40, heightColumn);
     ctx.fillStyle = '#000';
     ctx.fillText(time.toFixed(0), histoX + columnIndent * i, 240 - heightColumn);

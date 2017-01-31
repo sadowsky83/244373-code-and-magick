@@ -25,7 +25,7 @@ function getMaxTime(times) {
 
 // вычисляем случайный синий цвет
 function getRandomBlueColor() {
-  return 'hsl(240, ' + (Math.round(Math.random() * (100 - 1) + 1)) + '%, 50%)';
+  return 'hsl(240, ' + (Math.round(Math.random(1) * 100)) + '%, 50%)';
 }
 
 // выводим фон статстики и тень по переменным с помощью функции

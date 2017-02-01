@@ -36,7 +36,7 @@
 
     <div class="setup-user">
       <img class="setup-user-pic" src="./img/user-1.jpg" />
-      <input type="text" class="setup-user-name" value="Синий Пендальф" />
+      <input type="text" class="setup-user-name" value="Синий Пендальф" required maxlength="10"/>   <!-- Добавлены атрибуты обязательной формы и максимальной длины в 50 символов -->
     </div>
 
     <div class="setup-wizard-appearance">
@@ -126,6 +126,7 @@
       return height / 3 - getWizardHeight();
     }
   </script>
+  <script src="js/setup.js" type="application/javascript"></script>
   <script src="js/stat.js" type="application/javascript"></script>
 <script src="js/game.js" type="application/javascript"></script>
 

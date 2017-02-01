@@ -7,12 +7,12 @@ var closeSetup = document.querySelector('.setup-close');
 var setupBlock = document.querySelector('.setup');
 
 // открытие
-openSetup.addEventListener('click', function() {
+openSetup.addEventListener('click', function () {
   setupBlock.classList.remove('invisible');
 });
 
 // закрытие
-closeSetup.addEventListener('click', function() {
+closeSetup.addEventListener('click', function () {
   setupBlock.classList.add('invisible');
 });
 
@@ -49,19 +49,19 @@ var fireballColors = [
 ];
 
 // случайный выбор цветов фигурки мага
-wizard.addEventListener('click', function() {
+wizard.addEventListener('click', function () {
   var changeColor = Math.round(Math.random() * 4); // случайный выбор номера элемента массива
 
-  wizardCoat.addEventListener('click', function() {
+  wizardCoat.addEventListener('click', function () {
     wizardCoat.style.fill = wizardCoatColors[changeColor];
   });
 
-  wizardEyes.addEventListener('click', function() {
+  wizardEyes.addEventListener('click', function () {
     wizardEyes.style.fill = wizardEyesColors[changeColor];
   });
 });
 
-fireball.addEventListener('click', function() {
+fireball.addEventListener('click', function () {
   var changeColor = Math.round(Math.random() * 4); // случайный выбор номера элемента массива
   fireball.style.background = fireballColors[changeColor];
 });

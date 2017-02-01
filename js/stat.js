@@ -29,7 +29,7 @@ function getRandomBlueColor() {
 }
 
 // выводим фон статстики и тень по переменным с помощью функции
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
 
   // парамеры гистограммы
   var statisHeight = 150; // высота гитограммы

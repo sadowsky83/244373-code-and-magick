@@ -7,17 +7,16 @@ var closeSetup = document.querySelector('.setup-close');
 var setupBlock = document.querySelector('.setup');
 
 // открытие
-openSetup.addEventListener('click', function () {
+openSetup.addEventListener('click', function() {
   setupBlock.classList.remove('invisible');
 });
 
 // закрытие
-closeSetup.addEventListener('click', function () {
+closeSetup.addEventListener('click', function() {
   setupBlock.classList.add('invisible');
 });
 
 // изменение цвета фигурки мага и цвета фаербола
-var wizard = document.querySelector('.setup-wizard-appearance');
 var wizardCoat = document.getElementById('wizard-coat');
 var wizardEyes = document.getElementById('wizard-eyes');
 var fireball = document.querySelector('.setup-fireball-wrap');
@@ -48,20 +47,29 @@ var fireballColors = [
   '#e6e848'
 ];
 
-// случайный выбор цветов фигурки мага
-wizard.addEventListener('click', function () {
-  var changeColor = Math.round(Math.random() * 4); // случайный выбор номера элемента массива
+// случайный выбор цветов из массивов для fill
+var colorFill = function (element, arrayColors) {
+  var changeColorFill = Math.floor(Math.random() * arrayColors.length);
+  element.style.fill = arrayColors[changeColorFill];
+};
 
-  wizardCoat.addEventListener('click', function () {
-    wizardCoat.style.fill = wizardCoatColors[changeColor];
-  });
-
-  wizardEyes.addEventListener('click', function () {
-    wizardEyes.style.fill = wizardEyesColors[changeColor];
-  });
+// выбор случайного цвета для одежды
+wizardCoat.addEventListener('click', function() {
+  colorFill(wizardCoat, wizardCoatColors);
 });
 
-fireball.addEventListener('click', function () {
-  var changeColor = Math.round(Math.random() * 4); // случайный выбор номера элемента массива
-  fireball.style.background = fireballColors[changeColor];
+// выбор случайного цвета для глаз
+wizardEyes.addEventListener('click', function() {
+  colorFill(wizardEyes, wizardEyesColors);
+});
+
+// случайный выбор цветов из массивов для background
+var colorBackground = function (element, arrayColors) {
+  var changeColorBackground = Math.floor(Math.random() * arrayColors.length);
+  element.style.background = arrayColors[changeColorBackground];
+};
+
+// выбор случайного цвета для фаербола
+fireball.addEventListener('click', function() {
+  colorBackground(fireball, fireballColors);
 });

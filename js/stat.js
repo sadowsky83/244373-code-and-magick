@@ -25,11 +25,11 @@ function getMaxTime(times) {
 
 // вычисляем случайный синий цвет
 function getRandomBlueColor() {
-  return 'hsl(240, ' + (Math.round(Math.random(1) * 100)) + '%, 50%)';
+  return 'hsl(240, ' + (Math.round(Math.random() * 100)) + '%, 50%)';
 }
 
 // выводим фон статстики и тень по переменным с помощью функции
-window.renderStatistics = function(ctx, names, times) {
+window.renderStatistics = function (ctx, names, times) {
 
   // парамеры гистограммы
   var statisHeight = 150; // высота гитограммы
@@ -79,7 +79,7 @@ window.renderStatistics = function(ctx, names, times) {
       'x': indentX,
       'y': indentY,
       'width': 40,
-      height
+      height: height
     };
 
     // выводим колонки игроков случайного синего цвета, для игрока "Вы" колонка красного цвета

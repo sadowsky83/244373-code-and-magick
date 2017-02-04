@@ -7,12 +7,12 @@ var closeSetup = document.querySelector('.setup-close');
 var setupBlock = document.querySelector('.setup');
 
 // открытие
-openSetup.addEventListener('click', function() {
+openSetup.addEventListener('click', function () {
   setupBlock.classList.remove('invisible');
 });
 
 // закрытие
-closeSetup.addEventListener('click', function() {
+closeSetup.addEventListener('click', function () {
   setupBlock.classList.add('invisible');
 });
 
@@ -54,12 +54,12 @@ var colorFill = function (element, arrayColors) {
 };
 
 // выбор случайного цвета для одежды
-wizardCoat.addEventListener('click', function() {
+wizardCoat.addEventListener('click', function () {
   colorFill(wizardCoat, wizardCoatColors);
 });
 
 // выбор случайного цвета для глаз
-wizardEyes.addEventListener('click', function() {
+wizardEyes.addEventListener('click', function () {
   colorFill(wizardEyes, wizardEyesColors);
 });
 
@@ -70,6 +70,6 @@ var colorBackground = function (element, arrayColors) {
 };
 
 // выбор случайного цвета для фаербола
-fireball.addEventListener('click', function() {
+fireball.addEventListener('click', function () {
   colorBackground(fireball, fireballColors);
 });

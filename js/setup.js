@@ -13,10 +13,12 @@ var activateEvent = function (evt) {
   return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
 };
 
+var setupOpen = function () {setup.classList.add('invisible')};
+
 // обработка нажатий клавиш в виджете setup
 var setupKeydownHandler = function (evt) {
   if (evt.keyCode === ESCAPE_KEY_CODE) {
-    setup.classList.add('invisible');
+    setupOpen();
   }
 };
 
@@ -28,7 +30,7 @@ var showSetupWidget = function () {
 
 // закрытие виджета setup
 var hideSetupWidget = function () {
-  setup.classList.add('invisible');
+  setupOpen();
   document.removeEventListener('keydown', setupKeydownHandler);
 };
 

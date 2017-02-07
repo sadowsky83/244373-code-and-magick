@@ -79,7 +79,7 @@ window.renderStatistics = function (ctx, names, times) {
       'x': indentX,
       'y': indentY,
       'width': 40,
-      height: height
+      'height': height
     };
 
     // выводим колонки игроков случайного синего цвета, для игрока "Вы" колонка красного цвета

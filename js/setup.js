@@ -71,7 +71,6 @@ var closeButton = function (nameButton) {
 closeButton(closeSetup);
 closeButton(setupSubmit);
 
-
 // изменение цвета фигурки мага и цвета фаербола
 var wizardCoat = document.getElementById('wizard-coat');
 var wizardEyes = document.getElementById('wizard-eyes');
@@ -103,29 +102,6 @@ var fireballColors = [
   '#e6e848'
 ];
 
-// случайный выбор цветов из массивов для fill
-var colorFill = function (element, arrayColors) {
-  var changeColorFill = Math.floor(Math.random() * arrayColors.length);
-  element.style.fill = arrayColors[changeColorFill];
-};
-
-// выбор случайного цвета для одежды
-wizardCoat.addEventListener('click', function () {
-  colorFill(wizardCoat, wizardCoatColors);
-});
-
-// выбор случайного цвета для глаз
-wizardEyes.addEventListener('click', function () {
-  colorFill(wizardEyes, wizardEyesColors);
-});
-
-// случайный выбор цветов из массивов для background
-var colorBackground = function (element, arrayColors) {
-  var changeColorBackground = Math.floor(Math.random() * arrayColors.length);
-  element.style.background = arrayColors[changeColorBackground];
-};
-
-// выбор случайного цвета для фаербола
-fireball.addEventListener('click', function () {
-  colorBackground(fireball, fireballColors);
-});
+window.colorizeElement(wizardCoat, wizardCoatColors, 'fill');
+window.colorizeElement(wizardEyes, wizardEyesColors, 'fill');
+window.colorizeElement(fireball, fireballColors, 'background');

@@ -5,21 +5,6 @@ var closeSetup = document.querySelector('.setup-close');
 var setup = document.querySelector('.setup');
 var setupSubmit = document.querySelector('.setup-submit');
 
-var ENTER_KEY_CODE = 13;
-var ESCAPE_KEY_CODE = 27;
-
-// определение переменной ENTER_KEY_CODE (клавиши Ввод)
-var activateEvent = function (evt) {
-  return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
-};
-
-// обработка нажатий клавиш в виджете setup
-var setupKeydownHandler = function (evt) {
-  if (evt.keyCode === ESCAPE_KEY_CODE) {
-    setup.classList.add('invisible');
-  }
-};
-
 // открытие виджета setup
 var showSetupWidget = function () {
   setup.classList.remove('invisible');
@@ -46,7 +31,7 @@ openSetup.addEventListener('click', function () {
 
 // открытие виджета setup по нажатию
 openSetup.addEventListener('keydown', function (evt) {
-  if (activateEvent(evt)) {
+  if (window.activateEvent(evt)) {
     showSetupWidget();
     statusAriaRole(openSetup);
   }
@@ -61,7 +46,7 @@ var closeButton = function (nameButton) {
 
   // закрытие виджета setup по нажатю
   nameButton.addEventListener('keydown', function (evt) {
-    if (activateEvent(evt)) {
+    if (window.activateEvent(evt)) {
       hideSetupWidget();
       statusAriaRole(nameButton);
     }

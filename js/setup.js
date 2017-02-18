@@ -31,7 +31,7 @@ openSetup.addEventListener('click', function () {
 
 // открытие виджета setup по нажатию
 openSetup.addEventListener('keydown', function (evt) {
-  if (window.utils.activateEvent(evt) {
+  if (window.utils.activateEvent(evt)) {
     showSetupWidget();
     statusAriaRole(openSetup);
   }

@@ -1,24 +1,28 @@
 'use strict';
 
-// определение переменной ENTER_KEY_CODE (клавиши Ввод)
-window.activateEvent = (function () {
-  var ENTER_KEY_CODE = 13;
-  return function (evt) {
-    return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
-  };
-})();
 
-// обработка нажатий клавиш в виджете setup
-window.setupKeydownHandler = (function () {
-  var ESCAPE_KEY_CODE = 27;
-  return function (evt) {
-    if (evt.keyCode === ESCAPE_KEY_CODE) {
-      setup.classList.add('invisible');
-    }
-  };
-})();
+
+
+
 
 window.utils = (function (array) {
+  // определение переменной ENTER_KEY_CODE (клавиши Ввод)
+  var activateEvent = function () {
+    var ENTER_KEY_CODE = 13;
+    return function (evt) {
+      return evt.keyCode && evt.keyCode === ENTER_KEY_CODE;
+    };
+  };
+
+  // обработка нажатий клавиш в виджете setup
+  var setupKeydownHandler = function () {
+    var ESCAPE_KEY_CODE = 27;
+    return function (evt) {
+      if (evt.keyCode === ESCAPE_KEY_CODE) {
+        setup.classList.add('invisible');
+      }
+    };
+  };
 
   // случайный элемент массива
   var getRandomElement = function (array) {

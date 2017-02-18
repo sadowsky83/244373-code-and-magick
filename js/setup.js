@@ -8,13 +8,13 @@ var setupSubmit = document.querySelector('.setup-submit');
 // открытие виджета setup
 var showSetupWidget = function () {
   setup.classList.remove('invisible');
-  document.addEventListener('keydown', setupKeydownHandler);
+  document.addEventListener('keydown', window.utils.setupKeydownHandler);
 };
 
 // закрытие виджета setup
 var hideSetupWidget = function () {
   setup.classList.add('invisible');
-  document.removeEventListener('keydown', setupKeydownHandler);
+  document.removeEventListener('keydown', window.utils.setupKeydownHandler);
 };
 
 // изменение ARIA роли
@@ -31,7 +31,7 @@ openSetup.addEventListener('click', function () {
 
 // открытие виджета setup по нажатию
 openSetup.addEventListener('keydown', function (evt) {
-  if (window.activateEvent(evt)) {
+  if (window.utils.activateEvent(evt) {
     showSetupWidget();
     statusAriaRole(openSetup);
   }
@@ -46,7 +46,7 @@ var closeButton = function (nameButton) {
 
   // закрытие виджета setup по нажатю
   nameButton.addEventListener('keydown', function (evt) {
-    if (window.activateEvent(evt)) {
+    if (window.utils.activateEvent(evt)) {
       hideSetupWidget();
       statusAriaRole(nameButton);
     }
